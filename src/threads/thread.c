@@ -11,6 +11,7 @@
 #include "threads/switch.h"
 #include "threads/synch.h"
 #include "threads/vaddr.h"
+#include "compareByPriority.c"
 #ifdef USERPROG
 #include "userprog/process.h"
 #endif
@@ -495,8 +496,11 @@ next_thread_to_run (void)
 {
   if (list_empty (&ready_list))
     return idle_thread;
-  else
-    return list_entry (list_pop_front (&ready_list), struct thread, elem);
+  else{
+    int *t;
+    return list_entry (list_max_remove (&ready_list,priorityFunction,t), struct thread, elem);
+  }
+    /* return list_entry (list_pop_front (&ready_list), struct thread, elem); */
 }
 
 /* Completes a thread switch by activating the new thread's page
