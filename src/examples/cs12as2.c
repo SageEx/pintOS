@@ -38,7 +38,7 @@ tob(){
         /*     smoking=0; */
         /*     /1* sem *1/ */
         /* } */
-        printf("Tobacco Man Got Paper & Matches - He is smoking\n ");
+        printf("Tobacco Man Got Paper & Matches - He is smoking - He is HIGH !!\n ");
         sema_up(&Smoking);
         sema_down(&Tobacco);
 
@@ -52,7 +52,7 @@ pap(){
         /*     smoking=0; */
         /*     /1* sem *1/ */
         /* } */
-        printf("Paper Man Got Tobacco & Matches - He is smoking \n");
+        printf("Paper Man Got Tobacco & Matches - He is smoking - He is HIGH !! \n");
         sema_up(&Smoking);
         sema_down(&Paper);
     }
@@ -65,7 +65,7 @@ mat(){
         /*     smoking=0; */
         /*     /1* sem *1/ */
         /* } */
-        printf("Matches Man Got Paper & Tobacco - He is smoking \n");
+        printf("Matches Man Got Paper & Tobacco - He is smoking - He is HIGH !! \n");
         sema_up(&Smoking);
         sema_down(&Matches);
     }
